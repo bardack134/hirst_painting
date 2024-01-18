@@ -23,7 +23,9 @@ def change_color(turtle):
     turtle.color(R,G,B)
     
 
+# Esta función hace que una tortuga avance 10 veces dejando marcas de su forma y color
 def move_forwards(turtle):
+    # Crea un bucle que se repite 10 veces
     for i in range(10):
         
         # Llama a la función change_color para cambiar el color de la tortuga
@@ -40,6 +42,10 @@ def move_forwards(turtle):
 
         # Baja el lápiz de la tortuga para que deje trazo al moverse
         turtle.pendown()
+        
+        # Si es la última iteración, oculta la tortuga
+        if i ==9:
+            turtle.hideturtle()
 
 
 
@@ -47,7 +53,7 @@ def move_forwards(turtle):
 turtle=Turtle()
 
 # Aumenta la velocidad de la tortuga a la máxima posible
-turtle.speed("fastest")
+turtle.speed("fast")
 
 
 
@@ -55,28 +61,23 @@ turtle.speed("fastest")
 turtle.shape("circle")
 
 
-
 # Aumenta el grosor del trazo de la tortuga a 20 unidades
 turtle.pensize(20)
 
+# Crea un bucle que se repite 10 veces
 for i in range(-250, 250, 50):
     
+    # Imprime el valor de la variable i
     print(i)
      
     # Levanta el lápiz de la tortuga para que no deje trazo al moverse
     turtle.penup()
 
+    # Mueve la tortuga a la posición (-260, i)
     turtle.goto(-260, i)
 
+    # Llama a la función move_forwards para hacer que la tortuga avance 10 veces dejando marcas
     move_forwards(turtle)
-
-
-
-
-
-
-
-
 
 
 
